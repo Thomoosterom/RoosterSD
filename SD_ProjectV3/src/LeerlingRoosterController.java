@@ -23,7 +23,7 @@ public class LeerlingRoosterController {
         String j = Student.getDeStudent().getNaam();
         String[] split2 = j.split(" ");
         naamGebruiker.setText("Welkom " + split2[0]);
-        datePicker.setValue(LocalDate.of(2021, 4, 5));
+        datePicker.setValue(LocalDate.now());
     }
     public void cancel() {
         Stage stage = (Stage) close.getScene().getWindow();
@@ -48,7 +48,8 @@ public class LeerlingRoosterController {
 
     public void ziekMelden() {
         if (ziekmelden.isSelected()) {
-            Student.getDeStudent().setStatus("ziek");
+            Student.getDeStudent().setStatus("afwezig");
+            Student.getDeStudent().setReden("ziek");
             String i = Student.getDeStudent().getStatus();
         }
 

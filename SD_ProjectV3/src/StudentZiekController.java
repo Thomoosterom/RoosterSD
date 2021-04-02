@@ -19,8 +19,8 @@ public class StudentZiekController {
     @FXML private DatePicker datumtotPicker;
 
     public void initialize() {
-        datumvanPicker.setValue(LocalDate.of(2021, 4, 5));
-        datumtotPicker.setValue(LocalDate.of(2021, 4, 5));
+        datumvanPicker.setValue(LocalDate.now());
+        datumtotPicker.setValue(LocalDate.now());
     }
 
     public void cancel(ActionEvent actionEvent) {
@@ -41,6 +41,7 @@ public class StudentZiekController {
             } else if (afwezigBox.isSelected() && !redenField.getText().isEmpty()) {
                 String tekst = String.valueOf(redenField.getText());
                 Student.getDeStudent().setStatus("afwezig");
+                Student.getDeStudent().setReden(redenField.getText());
                 Stage stage = (Stage) ok.getScene().getWindow();
                 stage.close();
             } else if (afwezigBox.isSelected() && redenField.getText().isEmpty()){

@@ -12,6 +12,7 @@ public class Student {
     private String naam;
     private String email;
     private String status;
+    private String reden;
     private LocalDate ziekDatum, afwezigDatumBegin, afwezigDatumEinde;
 
     public Student(String st, LocalDate zd, LocalDate adb, LocalDate ade) {
@@ -39,12 +40,17 @@ public class Student {
         return status;
     }
 
+    public String getReden() {return reden;}
+
     public void setStatus(String s) {
-        if(s.equals("aanwezig")|| s.equals("afwezig") || s.equals("ziek")) {
+        if (s.equals("aanwezig")|| s.equals("afwezig")) {
             status = s;
         }
     }
 
+    public void setReden(String r){
+        reden = r;
+    }
 
     @Override
     public boolean equals(Object object) {

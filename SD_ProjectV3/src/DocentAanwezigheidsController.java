@@ -32,15 +32,17 @@ public class DocentAanwezigheidsController {
             Leerlingen.add("");
         }
 
-        Leerlingen.remove(Student.getDeStudent().getNaam());
-        Leerlingen.remove(Student.getDeStudent().getStatus());
-        Leerlingen.remove("aanwezig");
-        Leerlingen.remove("");
+        if (Student.getDeStudent() != null) {
+            Leerlingen.remove(Student.getDeStudent().getNaam());
+            Leerlingen.remove(Student.getDeStudent().getStatus());
+            Leerlingen.remove("aanwezig");
+            Leerlingen.remove("");
 
-        Leerlingen.add(String.valueOf(Student.getDeStudent().getNaam()));
-        Leerlingen.add(String.valueOf(Student.getDeStudent().getStatus()));
-        Leerlingen.add("");
-        System.out.println(Leerlingen);
+            Leerlingen.add(String.valueOf(Student.getDeStudent().getNaam()));
+            Leerlingen.add(String.valueOf(Student.getDeStudent().getStatus()));
+            Leerlingen.add(String.valueOf(Student.getDeStudent().getReden()));
+            Leerlingen.add("");
+        }
 
         ListView.setItems(Leerlingen);
 
