@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DocentRoosterController">
+   <children>
+      <ListView layoutX="20.0" layoutY="117.0" prefHeight="305.0" prefWidth="559.0" />
+      <Label layoutX="34.0" layoutY="141.0" />
+      <Label layoutX="29.0" layoutY="141.0" prefHeight="17.0" prefWidth="44.0" text="9:00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="175.0" text="10:00" />
+      <Label layoutX="29.0" layoutY="209.0" text="11:00" />
+      <Label layoutX="29.0" layoutY="242.0" text="12:00" />
+      <Label layoutX="29.0" layoutY="279.0" text="13:00" />
+      <Label layoutX="29.0" layoutY="313.0" text="14:00" />
+      <Label layoutX="29.0" layoutY="350.0" text="15:00" />
+      <Label layoutX="29.0" layoutY="385.0" text="16:00" />
+      <ListView layoutX="95.0" layoutY="117.0" prefHeight="305.0" prefWidth="97.0" />
+      <ListView layoutX="192.0" layoutY="117.0" prefHeight="305.0" prefWidth="97.0" />
+      <ListView layoutX="289.0" layoutY="117.0" prefHeight="305.0" prefWidth="97.0" />
+      <ListView layoutX="386.0" layoutY="117.0" prefHeight="305.0" prefWidth="97.0" />
+      <ListView layoutX="483.0" layoutY="117.0" prefHeight="305.0" prefWidth="97.0" />
+      <Label layoutX="117.0" layoutY="99.0" text="Maandag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="217.0" layoutY="99.0" text="Dinsdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="308.0" layoutY="99.0" text="Woensdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="403.0" layoutY="99.0" text="Donderdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="511.0" layoutY="99.0" text="Vrijdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="18.0" layoutY="64.0" text="Agenda">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextArea editable="false" layoutX="95.0" layoutY="147.0" prefHeight="108.0" prefWidth="97.0" text="OOAD&#10;FYSIEK&#10;4.0096&#10;" />
+      <TextArea editable="false" layoutX="192.0" layoutY="188.0" prefHeight="108.0" prefWidth="97.0" text="OOAD&#10;ONLINE&#10;&#10;" />
+      <TextArea editable="false" layoutX="386.0" layoutY="251.0" prefHeight="108.0" prefWidth="97.0" text="OOAD&#10;ONLINE&#10;&#10;" />
+      <Button fx:id = "close" layoutX="523.0" layoutY="455.0" mnemonicParsing="false" onAction="#Back" prefHeight="25.0" prefWidth="60.0" text="Back" />
+      <Label fx:id = "NaamGebruiker" layoutX="207.0" layoutY="20.0" prefHeight="27.0" prefWidth="226.0" text="Label" textFill="#2d05af">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font></Label>
+      <DatePicker fx:id ="datePicker" layoutX="169.0" layoutY="65.0" />
+      <Button layoutX="136.0" layoutY="64.0" mnemonicParsing="false" onAction="#dagTerug" prefHeight="27.0" prefWidth="33.0" text="&lt;&lt;" />
+      <Button layoutX="342.0" layoutY="65.0" mnemonicParsing="false" onAction="#dagVerder" text="&gt;&gt;" />
+      <Button fx:id="zieAbsenten" layoutX="20.0" layoutY="455.0" mnemonicParsing="false" onAction="#zieAbsenten" text="Zie absenten" />
+   </children>
+</AnchorPane>

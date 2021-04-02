@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginUI.LoginController">
+   <children>
+      <Button layoutX="485.0" layoutY="285.0" mnemonicParsing="false" onAction="#inloggen" text="Log in" />
+      <Label layoutX="215.0" layoutY="65.0" text="Rooster inloggen">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="gebruikersnaam" layoutX="285.0" layoutY="155.0" prefWidth="250.0" />
+      <PasswordField fx:id="wachtwoord" layoutX="285.0" layoutY="215.0" prefWidth="250.0" />
+      <Label layoutX="115.0" layoutY="155.0" text="Gebruikersnaam:" />
+      <Label layoutX="115.0" layoutY="215.0" text="Wachtwoord:" />
+   </children>
+</AnchorPane>

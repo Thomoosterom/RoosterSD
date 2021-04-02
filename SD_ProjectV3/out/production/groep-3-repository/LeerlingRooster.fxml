@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LeerlingRoosterController">
+   <children>
+      <ListView layoutX="19.0" layoutY="130.0" prefHeight="305.0" prefWidth="560.0" />
+      <ListView layoutX="280.0" layoutY="130.0" prefHeight="305.0" prefWidth="97.0" />
+      <ListView layoutX="477.0" layoutY="130.0" prefHeight="305.0" prefWidth="104.0" />
+      <ListView layoutX="177.0" layoutY="130.0" prefHeight="305.0" prefWidth="104.0" />
+      <Label layoutX="17.0" layoutY="74.0" text="Agenda">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="113.0" onMouseClicked="#afwezigheid" text="Maandag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="206.0" layoutY="113.0" onMouseClicked="#afwezigheid" text="Dinsdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="28.0" layoutY="152.0" prefHeight="17.0" prefWidth="44.0" text="9:00" />
+      <Label layoutX="28.0" layoutY="223.0" text="11:00" />
+      <Label layoutX="28.0" layoutY="188.0" text="10:00" />
+      <Label layoutX="28.0" layoutY="256.0" text="12:00" />
+      <Label layoutX="28.0" layoutY="290.0" text="13:00" />
+      <Label layoutX="28.0" layoutY="325.0" text="14:00" />
+      <Label layoutX="28.0" layoutY="361.0" text="15:00" />
+      <TextArea editable="false" layoutX="177.0" layoutY="256.0" onMouseClicked="#afwezigheid" prefHeight="117.0" prefWidth="104.0" text="OOP&#10;ONLINE" />
+      <Label layoutX="298.0" layoutY="113.0" onMouseClicked="#afwezigheid" text="Woensdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="510.0" layoutY="113.0" onMouseClicked="#afwezigheid" text="Vrijdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="close" layoutX="530.0" layoutY="455.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="51.0" text="Back" />
+      <ListView layoutX="375.0" layoutY="130.0" prefHeight="305.0" prefWidth="104.0" />
+      <TextArea editable="false" layoutX="375.0" layoutY="160.0" onMouseClicked="#afwezigheid" prefHeight="89.0" prefWidth="104.0" text="TEAM&#10;BIJEEN-&#10;KOMST&#10;ONLINE" />
+      <ListView layoutX="73.0" layoutY="130.0" prefHeight="305.0" prefWidth="104.0" />
+      <TextArea editable="false" layoutX="73.0" layoutY="152.0" onMouseClicked="#afwezigheid" prefHeight="89.0" prefWidth="104.0" text="OOAD&#10;FYSIEK&#10;4.0096&#10;" />
+      <Label layoutX="28.0" layoutY="398.0" text="16:00" />
+      <Label layoutX="396.0" layoutY="113.0" onMouseClicked="#afwezigheid" text="Donderdag">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="19.0" layoutY="455.0" mnemonicParsing="false" onAction="#afwezigheidButton" prefHeight="25.0" prefWidth="131.0" text="Afwezigheid melden" />
+      <CheckBox fx:id="ziekmelden" layoutX="177.0" layoutY="455.0" mnemonicParsing="false" onAction="#ziekMelden" text="Ziekmelden" />
+      <Label fx:id="naamGebruiker" layoutX="207.0" layoutY="24.0" prefHeight="27.0" prefWidth="226.0" text="label" textFill="#1a05ba">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id = "datePicker" layoutX="207.0" layoutY="75.0" prefHeight="26.0" prefWidth="199.0" />
+      <Button  layoutX="172.0" layoutY="75.0" mnemonicParsing="false" onAction="#ButtonWeekTerug" prefHeight="26.0" prefWidth="33.0" text="&lt;&lt;" />
+      <Button  layoutX="408.0" layoutY="75.0" mnemonicParsing="false" onAction="#ButtonWeekVerder" text="&gt;&gt;" />
+   </children>
+</AnchorPane>

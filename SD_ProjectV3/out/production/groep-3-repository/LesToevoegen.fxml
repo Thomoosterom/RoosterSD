@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="318.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TitledPane animated="false" layoutX="29.0" layoutY="27.0" prefHeight="219.0" prefWidth="541.0" text="Les toevoegen">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="209.0" prefWidth="539.0">
+               <children>
+                  <TextField layoutX="108.0" layoutY="27.0" promptText="Naam" />
+                  <TextField layoutX="108.0" layoutY="65.0" promptText="Tijd van" />
+                  <TextField layoutX="108.0" layoutY="106.0" promptText="Tijd tot" />
+                  <DatePicker layoutX="108.0" layoutY="146.0" prefHeight="25.0" prefWidth="148.0" />
+                  <DatePicker layoutX="379.0" layoutY="65.0" prefHeight="25.0" prefWidth="129.0" />
+                  <CheckBox layoutX="283.0" layoutY="31.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="161.0" text="Weekelijk herhalende les" />
+                  <Label layoutX="26.0" layoutY="31.0" text="Naam les:" />
+                  <Label layoutX="26.0" layoutY="69.0" text="Tijd begin:" />
+                  <Label layoutX="26.0" layoutY="110.0" text="Tijd einde:" />
+                  <Label layoutX="24.0" layoutY="150.0" text="Datum les:" />
+                  <Label layoutX="283.0" layoutY="69.0" text="Herhaal les tot:" />
+                  <ComboBox layoutX="378.0" layoutY="146.0" prefHeight="25.0" prefWidth="132.0" promptText="Klas" />
+                  <Label layoutX="283.0" layoutY="150.0" text="Klas selecteren:" />
+               </children>
+            </AnchorPane>
+        </content>
+      </TitledPane>
+      <Button layoutX="476.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Toevoegen" />
+      <Button layoutX="365.0" layoutY="271.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="94.0" text="Annuleren" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,3 @@
+peter.vanrooijen@docent.hu.nl : peter
+leo.pruijt@docent.hu.nl : leo
+bart.vaneijkelenburg@docent.hu.nl : bart
