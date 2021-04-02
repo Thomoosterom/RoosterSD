@@ -37,9 +37,7 @@ public class StudentZiekController {
         }
         else {
             if (!afwezigBox.isSelected()) {
-                Klas.getKlas().getStudent().setStatus("aanwezig");
-                Stage stage = (Stage) ok.getScene().getWindow();
-                stage.close();
+                meldingLabel.setText("Vink het afwezig box aan of cancel!");
             } else if (afwezigBox.isSelected() && !redenField.getText().isEmpty()) {
                 String tekst = String.valueOf(redenField.getText());
                 Klas.getKlas().getStudent().setStatus("afwezig " + tekst);
