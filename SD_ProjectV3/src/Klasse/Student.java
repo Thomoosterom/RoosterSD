@@ -4,6 +4,10 @@ package Klasse;
 import java.time.LocalDate;
 
 public class Student {
+    private static Student deStudent;
+    public static void setDeStudent(Student student){ deStudent = student;}
+    public static Student getDeStudent(){ return deStudent;}
+    
     private String naam;
     private String email;
     private String status;
