@@ -40,15 +40,17 @@ public class StudentZiekController {
                 meldingLabel.setText("Vink het afwezig box aan of cancel!");
             } else if (afwezigBox.isSelected() && !redenField.getText().isEmpty()) {
                 String tekst = String.valueOf(redenField.getText());
-                Klas.getKlas().getStudent().setStatus("afwezig " + tekst);
+                Student.getDeStudent().setStatus("afwezig");
                 Stage stage = (Stage) ok.getScene().getWindow();
                 stage.close();
-            } else {
+            } else if (afwezigBox.isSelected() && redenField.getText().isEmpty()){
+                meldingLabel.setText("Vul een reden in!");
+            }
+            else {
                 meldingLabel.setText("Er is iets fout gegaan, probeer het opnieuw.");
             }
         }
         initialize();
     }
-
-    }
+}
 

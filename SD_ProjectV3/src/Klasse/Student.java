@@ -2,6 +2,7 @@ package Klasse;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Student {
     private static Student deStudent;

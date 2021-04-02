@@ -13,12 +13,15 @@ public class Docent {
     public Docent(String em) {
         mailadres = em;
     }
+
     public String getNaam() {
         return naam;
     }
+
     public String getMailadres() {
         return mailadres;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

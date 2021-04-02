@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
+import jdk.dynalink.beans.StaticClass;
 
 public class DocentAanwezigheidsController {
     @FXML private ListView ListView;
@@ -15,11 +16,7 @@ public class DocentAanwezigheidsController {
     Klas k = Klas.getKlas();
 
     public void initialize() {
-        for(Student s: k.getStudenten()) {
-            System.out.println(s.getStatus());
-        }
         toonLeerlingen();
-
     }
 
     public void Close(ActionEvent actionEvent) {
@@ -28,12 +25,23 @@ public class DocentAanwezigheidsController {
     }
     public void toonLeerlingen() {
         ObservableList<String> Leerlingen = FXCollections.observableArrayList();
-        Klas k = Klas.getKlas();
-        for(Student s: k.getStudenten()) {
-            System.out.println(s.getStatus());
+
+        for(Student s : k.getStudenten()) {
             Leerlingen.add(String.valueOf(s.getNaam()));
             Leerlingen.add(String.valueOf(s.getStatus()));
+            Leerlingen.add("");
         }
+
+        Leerlingen.remove(Student.getDeStudent().getNaam());
+        Leerlingen.remove(Student.getDeStudent().getStatus());
+        Leerlingen.remove("aanwezig");
+        Leerlingen.remove("");
+
+        Leerlingen.add(String.valueOf(Student.getDeStudent().getNaam()));
+        Leerlingen.add(String.valueOf(Student.getDeStudent().getStatus()));
+        Leerlingen.add("");
+        System.out.println(Leerlingen);
+
         ListView.setItems(Leerlingen);
 
     }

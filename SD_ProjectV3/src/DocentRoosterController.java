@@ -42,6 +42,7 @@ public class DocentRoosterController {
     }
 
     public void zieAbsenten(ActionEvent actionEvent) throws IOException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DocentAanwezigheidOverzicht.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();

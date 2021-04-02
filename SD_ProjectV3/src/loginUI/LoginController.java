@@ -36,7 +36,7 @@ public class LoginController {
                     if (wachtwoord.getText().equals(split2[0])) {
 
                         Student st = new Student(nm, t, "aanwezig");
-                        k.setStudent(st);
+                        Student.setDeStudent(st);
                         String fxmlPagina = "/LeerlingRooster.fxml";
                         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));
                         Parent root = loader.load();

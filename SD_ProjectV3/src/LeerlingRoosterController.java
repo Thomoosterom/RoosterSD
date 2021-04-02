@@ -1,4 +1,5 @@
 import Klasse.Klas;
+import Klasse.Student;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,7 @@ public class LeerlingRoosterController {
     Klas k = Klas.getKlas();
 
     public void initialize() {
-        String j = k.getStudent().getNaam();
+        String j = Student.getDeStudent().getNaam();
         String[] split2 = j.split(" ");
         naamGebruiker.setText("Welkom " + split2[0]);
         datePicker.setValue(LocalDate.of(2021, 4, 5));
@@ -47,9 +48,8 @@ public class LeerlingRoosterController {
 
     public void ziekMelden() {
         if (ziekmelden.isSelected()) {
-            k.getStudent().setStatus("ziek");
-            String i = k.getStudent().getStatus();
-            System.out.println(i);
+            Student.getDeStudent().setStatus("ziek");
+            String i = Student.getDeStudent().getStatus();
         }
 
     }
