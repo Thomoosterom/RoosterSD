@@ -12,6 +12,8 @@ import jdk.dynalink.beans.StaticClass;
 public class DocentAanwezigheidsController {
     @FXML private ListView ListView;
     @FXML private Button close;
+    public Button afwezig;
+    public Button aanwezig;
 
     Klas k = Klas.getKlas();
 
@@ -45,6 +47,29 @@ public class DocentAanwezigheidsController {
         }
 
         ListView.setItems(Leerlingen);
+
+    }
+
+    public void setAanwezig(ActionEvent actionEvent) {
+        ObservableList leerling = ListView.getSelectionModel().getSelectedIndices();
+        for (Object o : leerling){
+            String i = String.valueOf(o);
+            int index = Integer.parseInt(i) + 1;
+            Object aanwezig = "aanwezig";
+            ListView.getItems().set(index, aanwezig);
+            ListView.getItems().remove(index+1);
+        }
+    }
+
+    public void setAfwezig(ActionEvent actionEvent) {
+        ObservableList leerling = ListView.getSelectionModel().getSelectedIndices();
+        for (Object o : leerling){
+            String i = String.valueOf(o);
+            int index = Integer.parseInt(i) + 1;
+            Object afwezig = "afwezig";
+            ListView.getItems().set(index, afwezig);
+            ListView.getItems().add(index+1, "afwezig door docent");
+        }
 
     }
 }

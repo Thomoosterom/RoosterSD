@@ -47,6 +47,7 @@ public class LoginController {
                             newStage.setScene(new Scene(root));
                             newStage.initModality(Modality.APPLICATION_MODAL);
                             newStage.showAndWait();
+                            return;
                         }
                     }
                 }
@@ -70,11 +71,12 @@ public class LoginController {
                             newStage.setScene(new Scene(root));
                             newStage.initModality(Modality.APPLICATION_MODAL);
                             newStage.showAndWait();
+                            return;
                         }
                     }
                 }
 
-            }
+            } throw new Exception ();
 
 
         }catch(Exception exception){
@@ -87,9 +89,4 @@ public class LoginController {
         alert.setContentText(alertText);
         alert.showAndWait();
     }
-
-//    public void reset(ActionEvent actionEvent){
-//        gebruikersnaam.clear();
-//        wachtwoord.clear();
-//    }
-    }
+}

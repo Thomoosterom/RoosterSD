@@ -18,6 +18,8 @@
             </ScrollPane>
         </content>
       </TitledPane>
-      <Button fx:id = "close" layoutX="558.0" layoutY="451.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="50.0" text="Back" />
+      <Button fx:id="close" layoutX="558.0" layoutY="451.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="50.0" text="Back" />
+      <Button fx:id="aanwezigButton" layoutX="35.0" layoutY="451.0" mnemonicParsing="false" onAction="#setAanwezig" text="Aanwezig" />
+      <Button fx:id="AfwezigButton" layoutX="125.0" layoutY="451.0" mnemonicParsing="false" onAction="#setAfwezig" prefHeight="25.0" prefWidth="67.0" text="Afwezig" />
    </children>
 </AnchorPane>
