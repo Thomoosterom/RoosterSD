@@ -34,7 +34,7 @@ public class DocentAanwezigheidsController {
             Leerlingen.add("");
         }
 
-        if (Student.getDeStudent() != null) {
+        if (Student.getDeStudent() != null && Student.getDeStudent().getStatus().equals("afwezig")) {
             Leerlingen.remove(Student.getDeStudent().getNaam());
             Leerlingen.remove(Student.getDeStudent().getStatus());
             Leerlingen.remove("aanwezig");
@@ -56,8 +56,10 @@ public class DocentAanwezigheidsController {
             String i = String.valueOf(o);
             int index = Integer.parseInt(i) + 1;
             Object aanwezig = "aanwezig";
-            ListView.getItems().set(index, aanwezig);
-            ListView.getItems().remove(index+1);
+            if (ListView.getItems().get(index).equals("afwezig")) {
+                ListView.getItems().set(index, aanwezig);
+                ListView.getItems().remove(index + 1);
+            }
         }
     }
 
@@ -67,8 +69,10 @@ public class DocentAanwezigheidsController {
             String i = String.valueOf(o);
             int index = Integer.parseInt(i) + 1;
             Object afwezig = "afwezig";
-            ListView.getItems().set(index, afwezig);
-            ListView.getItems().add(index+1, "afwezig door docent");
+            if (ListView.getItems().get(index).equals("aanwezig")) {
+                ListView.getItems().set(index, afwezig);
+                ListView.getItems().add(index + 1, "afwezig door docent");
+            }
         }
 
     }
