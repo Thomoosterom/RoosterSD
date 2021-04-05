@@ -2,7 +2,6 @@ package Klasse;
 
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Student {
     private static Student deStudent;
@@ -13,16 +12,19 @@ public class Student {
     private String email;
     private String status;
     private String reden;
+    private String wachtwoord;
     private LocalDate ziekDatum, afwezigDatumBegin, afwezigDatumEinde;
 
-    public Student(String st, LocalDate zd, LocalDate adb, LocalDate ade) {
+    public Student(String ww, String st, LocalDate zd, LocalDate adb, LocalDate ade) {
         status = st;
         ziekDatum=zd;
         afwezigDatumBegin = adb;
         afwezigDatumEinde = ade;
+        wachtwoord = ww;
     }
 
-    public Student(String nm, String em, String st) {
+    public Student(String ww,String nm, String em, String st) {
+        wachtwoord = ww;
         naam = nm;
         email = em;
         status = st;
@@ -30,6 +32,13 @@ public class Student {
 
     public String getNaam() {
         return naam;
+    }
+
+    public String getWachtwoord() {
+        return wachtwoord;
+    }
+    public void setWachtwoord(String ww) {
+        wachtwoord = ww;
     }
 
     public String getEmail() {
