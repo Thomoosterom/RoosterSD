@@ -32,12 +32,13 @@ public class LoginController {
             if (split[1].equals("student.hu.nl")) {
                 for (Student c : k.getStudenten()) {
                     String t = c.getEmail();
+                    String ww = c.getWachtwoord();
                     String nm = c.getNaam();
-                    String[] split2 = nm.split(" ");
+               //     String[] split2 = nm.split(" ");
                     if (gebruikersnaam.getText().equals(t)) {
-                        if (wachtwoord.getText().equals(split2[0])) {
+                        if (wachtwoord.getText().equals(ww)) {
 
-                            Student st = new Student(nm, t, "aanwezig");
+                            Student st = new Student(ww,nm, t, "aanwezig");
                             Student.setDeStudent(st);
                             String fxmlPagina = "/LeerlingRooster.fxml";
                             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));
@@ -56,12 +57,13 @@ public class LoginController {
             if (split[1].equals("docent.hu.nl")) {
                 for (Docent g : (k.getDocenten())) {
                     String t = g.getMailadres();
+                    String ww = g.getWachtwoord();
                     String nm = g.getNaam();
-                    String[] split2 = nm.split(" ");
+                //    String[] split2 = nm.split(" ");
                     if (gebruikersnaam.getText().equals(t)) {
-                        if (wachtwoord.getText().equals(split2[0])) {
+                        if (wachtwoord.getText().equals(ww)) {
 
-                            Docent d = new Docent(nm, t);
+                            Docent d = new Docent(ww,nm, t);
                             k.setDocent(d);
                             String fxmlPagina = "/DocentRooster.fxml";
                             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPagina));

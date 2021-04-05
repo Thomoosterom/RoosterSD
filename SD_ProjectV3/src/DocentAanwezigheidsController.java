@@ -51,6 +51,7 @@ public class DocentAanwezigheidsController {
     }
 
     public void setAanwezig(ActionEvent actionEvent) {
+
         ObservableList leerling = ListView.getSelectionModel().getSelectedIndices();
         for (Object o : leerling){
             String i = String.valueOf(o);

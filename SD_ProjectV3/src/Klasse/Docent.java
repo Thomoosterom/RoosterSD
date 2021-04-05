@@ -5,10 +5,18 @@ public class Docent {
     private String naam;
     private String mailadres;
     private Klas klas;
+    private String wachtwoord;
 
-    public Docent(String nm, String em) {
+    public Docent(String ww,String nm, String em) {
+        wachtwoord = ww;
         naam = nm;
         mailadres = em;
+    }
+    public void setWachtwoord(String ww) {
+        wachtwoord = ww;
+    }
+    public String getWachtwoord() {
+        return wachtwoord;
     }
     public Docent(String em) {
         mailadres = em;
