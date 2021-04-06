@@ -53,6 +53,7 @@ public class LeerlingRoosterController {
             Student.getDeStudent().setReden("ziek");
             Student.getDeStudent().setZiekDatum(LocalDate.now());
             betermeldenBox.setSelected(false);
+            Student.getDeStudent().setBeterDatum(LocalDate.of(2030,01,01));
         }
     }
 
