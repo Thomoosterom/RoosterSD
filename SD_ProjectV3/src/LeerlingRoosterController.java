@@ -50,9 +50,9 @@ public class LeerlingRoosterController {
         if (ziekmelden.isSelected()) {
             Student.getDeStudent().setStatus("afwezig");
             Student.getDeStudent().setReden("ziek");
+            Student.getDeStudent().setZiekDatum(LocalDate.now());
             String i = Student.getDeStudent().getStatus();
         }
-
     }
 
     public void ButtonWeekTerug(ActionEvent actionEvent) {

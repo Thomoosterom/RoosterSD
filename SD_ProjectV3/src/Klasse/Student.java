@@ -30,15 +30,18 @@ public class Student {
         status = st;
     }
 
+    public LocalDate getAfwezigDatumBegin(){ return afwezigDatumBegin;}
+
+    public LocalDate getAfwezigDatumEinde(){ return afwezigDatumEinde;}
+
+    public LocalDate getZiekDatum(){ return ziekDatum;}
+
     public String getNaam() {
         return naam;
     }
 
     public String getWachtwoord() {
         return wachtwoord;
-    }
-    public void setWachtwoord(String ww) {
-        wachtwoord = ww;
     }
 
     public String getEmail() {
@@ -55,6 +58,26 @@ public class Student {
         if (s.equals("aanwezig")|| s.equals("afwezig")) {
             status = s;
         }
+    }
+
+    public void setWachtwoord(String ww) {
+        wachtwoord = ww;
+    }
+
+    public void setAfwezigDatumBegin(LocalDate afwezigDatumBegin) {
+        this.afwezigDatumBegin = afwezigDatumBegin;
+        ziekDatum = LocalDate.of(2030,01,01);
+    }
+
+    public void setAfwezigDatumEinde(LocalDate afwezigDatumEinde) {
+        this.afwezigDatumEinde = afwezigDatumEinde;
+        ziekDatum = LocalDate.of(2030,01,01);
+    }
+
+    public void setZiekDatum(LocalDate ziekDatum) {
+        this.ziekDatum = ziekDatum;
+        afwezigDatumBegin = LocalDate.of(2000,01,01);
+        afwezigDatumEinde = LocalDate.of(2000,01,01);
     }
 
     public void setReden(String r){

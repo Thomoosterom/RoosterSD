@@ -13,6 +13,7 @@ public class Les {
         afwezigDatumBegin = bg;
         afwezigDatumEinde = ae;
     }
+
     public String getNaamLes() {
         return naam;
     }

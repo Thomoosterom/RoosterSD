@@ -29,7 +29,7 @@ public class StudentZiekController {
     }
 
     public void ok() {
-        if (datumvanPicker.getValue()==null || datumtotPicker.getValue()==null) {
+        if (datumvanPicker.getValue() == null || datumtotPicker.getValue()==null) {
             meldingLabel.setText("De datum is niet ingevoerd!");
         }
         else if (datumvanPicker.getValue().isAfter(datumtotPicker.getValue()) || datumvanPicker.getValue().isBefore(LocalDate.now()) || datumtotPicker.getValue().isBefore(LocalDate.now()) ){
@@ -42,6 +42,8 @@ public class StudentZiekController {
                 String tekst = String.valueOf(redenField.getText());
                 Student.getDeStudent().setStatus("afwezig");
                 Student.getDeStudent().setReden(redenField.getText());
+                Student.getDeStudent().setAfwezigDatumBegin(datumvanPicker.getValue());
+                Student.getDeStudent().setAfwezigDatumEinde(datumtotPicker.getValue());
                 Stage stage = (Stage) ok.getScene().getWindow();
                 stage.close();
             } else if (afwezigBox.isSelected() && redenField.getText().isEmpty()){

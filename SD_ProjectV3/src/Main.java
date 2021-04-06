@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
     public static void main(String[] args) throws Exception {
         Klas k = new Klas("V1A");
+
         Student k1 = new Student("1", "Cara van straten","cara.vanstraten@student.hu.nl ", "aanwezig");
         k.voegStudentToe(k1);
 
@@ -25,12 +26,16 @@ public class Main extends Application {
 
         Student k5 = new Student("5","Yassir yagou","yassir.yagou@student.hu.nl","aanwezig");
         k.voegStudentToe(k5);
+
         Docent d = new Docent("6","Peter van rooijen","peter.vanrooijen@docent.hu.nl");
         k.voegDocentToe(d);
+
         Docent d1 = new Docent("7","Leo pruijt","leo.pruijt@docent.hu.nl");
         k.voegDocentToe(d1);
+
         Docent d2 = new Docent("8","Bart van ijekelenburg","bart.vaneijkelenburg@docent.hu.nl");
         k.voegDocentToe(d2);
+
         Klas.setKlas(k);
         launch(args);
     }
