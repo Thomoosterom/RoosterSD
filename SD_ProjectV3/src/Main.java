@@ -12,7 +12,7 @@ public class Main extends Application {
     public static void main(String[] args) throws Exception {
         Klas k = new Klas("V1A");
 
-        Student k1 = new Student("1", "Cara van straten","cara.vanstraten@student.hu.nl ", "aanwezig");
+        Student k1 = new Student("1", "Cara van straten","cara.vanstraten@student.hu.nl", "aanwezig");
         k.voegStudentToe(k1);
 
         Student k2 = new Student("2","Selcuk canak","selcuk.canak@student.hu.nl","aanwezig");

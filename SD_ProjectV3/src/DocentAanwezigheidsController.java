@@ -55,7 +55,8 @@ public class DocentAanwezigheidsController {
         if (Student.getDeStudent() != null && Student.getDeStudent().getStatus().equals("afwezig")) {
             if (datePicker.getValue().isAfter(Student.getDeStudent().getAfwezigDatumBegin().minusDays(1)) &&
                     datePicker.getValue().isBefore(Student.getDeStudent().getAfwezigDatumEinde().plusDays(1)) ||
-                    datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1))) {
+                    datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
+                    datePicker.getValue().isBefore(Student.getDeStudent().getBeterDatum()) ) {
 
                 Leerlingen.remove(Student.getDeStudent().getNaam());
                 Leerlingen.remove(Student.getDeStudent().getStatus());

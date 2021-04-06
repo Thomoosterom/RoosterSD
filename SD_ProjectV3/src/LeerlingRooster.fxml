@@ -54,7 +54,7 @@
          </font>
       </Label>
       <Button layoutX="19.0" layoutY="455.0" mnemonicParsing="false" onAction="#afwezigheidButton" prefHeight="25.0" prefWidth="131.0" text="Afwezigheid melden" />
-      <CheckBox fx:id="ziekmelden" layoutX="177.0" layoutY="455.0" mnemonicParsing="false" onAction="#ziekMelden" text="Ziekmelden" />
+      <CheckBox fx:id="ziekmelden" layoutX="165.0" layoutY="459.0" mnemonicParsing="false" onAction="#ziekMelden" text="Ziekmelden" />
       <Label fx:id="naamGebruiker" alignment="CENTER" layoutX="171.0" layoutY="24.0" prefHeight="35.0" prefWidth="271.0" text="label" textFill="#1a05ba">
          <font>
             <Font name="System Bold" size="24.0" />
@@ -63,5 +63,6 @@
       <DatePicker fx:id="datePicker" layoutX="207.0" layoutY="75.0" prefHeight="26.0" prefWidth="199.0" />
       <Button layoutX="172.0" layoutY="75.0" mnemonicParsing="false" onAction="#ButtonWeekTerug" prefHeight="26.0" prefWidth="33.0" text="&lt;&lt;" />
       <Button layoutX="408.0" layoutY="75.0" mnemonicParsing="false" onAction="#ButtonWeekVerder" text="&gt;&gt;" />
+      <CheckBox fx:id="betermeldenBox" layoutX="265.0" layoutY="459.0" mnemonicParsing="false" onAction="#BeterMelden" text="Beter melden" />
    </children>
 </AnchorPane>

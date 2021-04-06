@@ -13,7 +13,7 @@ public class Student {
     private String status;
     private String reden;
     private String wachtwoord;
-    private LocalDate ziekDatum, afwezigDatumBegin, afwezigDatumEinde;
+    private LocalDate ziekDatum, beterDatum, afwezigDatumBegin, afwezigDatumEinde;
 
     public Student(String ww, String st, LocalDate zd, LocalDate adb, LocalDate ade) {
         status = st;
@@ -54,10 +54,16 @@ public class Student {
 
     public String getReden() {return reden;}
 
+    public LocalDate getBeterDatum (){return beterDatum;}
+
     public void setStatus(String s) {
         if (s.equals("aanwezig")|| s.equals("afwezig")) {
             status = s;
         }
+    }
+
+    public void setBeterDatum(LocalDate beterDatum) {
+        this.beterDatum = beterDatum;
     }
 
     public void setWachtwoord(String ww) {
