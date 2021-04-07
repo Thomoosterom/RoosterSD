@@ -59,11 +59,12 @@ public class DocentAanwezigheidsController {
                     datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
                     datePicker.getValue().isBefore(Student.getDeStudent().getBeterDatum()) ) {
 
-                Leerlingen.remove(Student.getDeStudent().getNaam());
-                Leerlingen.remove(Student.getDeStudent().getStatus());
-                Leerlingen.remove("aanwezig");
-                Leerlingen.remove("");
+                int index = Leerlingen.indexOf(Student.getDeStudent().getNaam());
+                Leerlingen.remove(index);
+                Leerlingen.remove(index);
+                Leerlingen.remove(index);
 
+                Student.getDeStudent().setStatus("afwezig");
                 Leerlingen.add(String.valueOf(Student.getDeStudent().getNaam()));
                 Leerlingen.add(String.valueOf(Student.getDeStudent().getStatus()));
                 Leerlingen.add(String.valueOf(Student.getDeStudent().getReden()));

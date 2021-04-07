@@ -57,7 +57,7 @@ public class Student {
     public LocalDate getBeterDatum (){return beterDatum;}
 
     public void setStatus(String s) {
-        if (s.equals("aanwezig")|| s.equals("afwezig")) {
+        if (s.equals("aanwezig")|| s.equals("afwezig") ) {
             status = s;
         }
     }
