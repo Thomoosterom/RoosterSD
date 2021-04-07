@@ -31,7 +31,7 @@ public class DocentAanwezigheidsController {
         String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
         dagLabel.setText(Dag);
 
-        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
+        if (Dag.equals("Maandag") || Dag.equals("Dinsdag") || Dag.equals("Donderdag")) {
             toonLeerlingen();
 
         } else{
@@ -112,7 +112,7 @@ public class DocentAanwezigheidsController {
         String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
         dagLabel.setText(Dag);
 
-        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
+        if (Dag.equals("Maandag") || Dag.equals("Dinsdag") || Dag.equals("Donderdag")) {
             toonLeerlingen();
         } else{
             ListView.getItems().clear();
@@ -129,7 +129,7 @@ public class DocentAanwezigheidsController {
         String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
         dagLabel.setText(Dag);
 
-        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
+        if (Dag.equals("Maandag") || Dag.equals("Dinsdag") || Dag.equals("Donderdag")) {
             toonLeerlingen();
         } else{
             ListView.getItems().clear();
