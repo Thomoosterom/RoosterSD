@@ -9,7 +9,6 @@ public class Klas {
     private List<Student> alleStudenten;
     private Student student;
     private Docent docent;
-    private Les les;
 
 
     public static void setKlas(Klas klas) {
@@ -29,12 +28,9 @@ public class Klas {
     public void setStudent(Student s) {
         student = s;
     }
+
     public void setDocent(Docent d) {
         docent = d;
-
-    }
-    public Les getLes() {
-        return les;
     }
 
     public List<Docent> getDocenten() {
