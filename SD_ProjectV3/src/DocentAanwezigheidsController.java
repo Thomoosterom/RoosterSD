@@ -28,9 +28,10 @@ public class DocentAanwezigheidsController {
         datePicker.setValue(LocalDate.now());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
         String dag = simpleDateFormat.format(java.sql.Date.valueOf(datePicker.getValue()));
-        dagLabel.setText(dag);
+        String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
+        dagLabel.setText(Dag);
 
-        if (dag.equals("maandag") || dag.equals("dinsdag") || dag.equals("donderdag")) {
+        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
             toonLeerlingen();
 
         } else{
@@ -108,9 +109,10 @@ public class DocentAanwezigheidsController {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
         String dag = simpleDateFormat.format(java.sql.Date.valueOf(datePicker.getValue()));
-        dagLabel.setText(dag);
+        String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
+        dagLabel.setText(Dag);
 
-        if (dag.equals("maandag") || dag.equals("dinsdag") || dag.equals("donderdag")) {
+        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
             toonLeerlingen();
         } else{
             ListView.getItems().clear();
@@ -124,9 +126,10 @@ public class DocentAanwezigheidsController {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
         String dag = simpleDateFormat.format(java.sql.Date.valueOf(datePicker.getValue()));
-        dagLabel.setText(dag);
+        String Dag = dag.substring(0,1).toUpperCase() + dag.substring(1).toLowerCase();
+        dagLabel.setText(Dag);
 
-        if (dag.equals("maandag") || dag.equals("dinsdag") || dag.equals("donderdag")) {
+        if (Dag.equals("Maandag") || dag.equals("Dinsdag") || dag.equals("Donderdag")) {
             toonLeerlingen();
         } else{
             ListView.getItems().clear();
