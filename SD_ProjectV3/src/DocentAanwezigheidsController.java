@@ -91,14 +91,17 @@ public class DocentAanwezigheidsController {
             int index = Integer.parseInt(i) + 1;
             Object aanwezig = "aanwezig";
             if (ListView.getItems().get(index).equals("afwezig")) {
-                ListView.getItems().set(index, aanwezig);
-                ListView.getItems().remove(index + 1);
-                ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
-                ListView.getItems().remove("");
-                ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
-                afwezigPercent = afwezigPercent-20;
-                ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
-                ListView.getItems().add("");
+                if (Student.getDeStudent()==null || datePicker.getValue().isAfter(Student.getDeStudent().getAfwezigDatumBegin().minusDays(1)) &&
+                        datePicker.getValue().isBefore(Student.getDeStudent().getAfwezigDatumEinde().plusDays(1)) ||
+                        datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
+                                datePicker.getValue().isBefore(Student.getDeStudent().getBeterDatum())) {
+                    ListView.getItems().set(index, aanwezig);
+                    ListView.getItems().remove(index + 1);
+                    ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
+                    ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
+                    afwezigPercent = afwezigPercent - 20;
+                    ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
+                }
             }
         }
     }
@@ -110,17 +113,17 @@ public class DocentAanwezigheidsController {
             int index = Integer.parseInt(i) + 1;
             Object afwezig = "afwezig";
             if (ListView.getItems().get(index).equals("aanwezig")) {
-                ListView.getItems().set(index, afwezig);
-                ListView.getItems().add(index + 1, "afwezig door docent");
-                ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
-                ListView.getItems().remove("");
-                ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
-                afwezigPercent = afwezigPercent+20;
-                ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
-                ListView.getItems().add("");
+
+                        ListView.getItems().set(index, afwezig);
+                        ListView.getItems().add(index + 1, "afwezig door docent");
+                        ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
+                        ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
+                        afwezigPercent = afwezigPercent + 20;
+                        ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
+                }
             }
         }
-    }
+
 
     public void dagTerug(ActionEvent actionEvent) {
         LocalDate dagEerder = datePicker.getValue().minusDays(1);
@@ -133,6 +136,7 @@ public class DocentAanwezigheidsController {
 
         if (Dag.equals("Maandag") || Dag.equals("Dinsdag") || Dag.equals("Donderdag")) {
             toonLeerlingen();
+            afwezigPercent = afwezigPercentage();
         } else{
             ListView.getItems().clear();
             ListView.getItems().add("Er is geen les vandaag");
@@ -150,6 +154,7 @@ public class DocentAanwezigheidsController {
 
         if (Dag.equals("Maandag") || Dag.equals("Dinsdag") || Dag.equals("Donderdag")) {
             toonLeerlingen();
+            afwezigPercent = afwezigPercentage();
         } else{
             ListView.getItems().clear();
             ListView.getItems().add("Er is geen les vandaag");
@@ -158,7 +163,9 @@ public class DocentAanwezigheidsController {
 
     public double afwezigPercentage() {
         double aantalAfwezig = 0;
-        if (Student.getDeStudent() != null && Student.getDeStudent().getStatus().equals("afwezig")) {
+        if (Student.getDeStudent() != null &&
+                Student.getDeStudent().getStatus().equals("afwezig") &&
+                datePicker.getValue() != null) {
             if (datePicker.getValue().isAfter(Student.getDeStudent().getAfwezigDatumBegin().minusDays(1)) &&
                     datePicker.getValue().isBefore(Student.getDeStudent().getAfwezigDatumEinde().plusDays(1)) ||
                     datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
@@ -170,13 +177,4 @@ public class DocentAanwezigheidsController {
         return percentage;
     }
 
-    public double percentagePlus() {
-        double percentagePlus = afwezigPercentage();
-        return percentagePlus =-20;
-    }
-
-    public double percentageMin() {
-        double percentagePlus = afwezigPercentage();
-        return percentagePlus =+20;
-    }
 }
