@@ -22,10 +22,13 @@ public class DocentAanwezigheidsController {
     public Button afwezig;
     public Button aanwezig;
     public Label dagLabel;
+    private double afwezigPercent;
+
 
     Klas k = Klas.getKlas();
 
     public void initialize() {
+        afwezigPercent = afwezigPercentage();
         datePicker.setValue(LocalDate.now());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE");
         String dag = simpleDateFormat.format(java.sql.Date.valueOf(datePicker.getValue()));
@@ -92,7 +95,9 @@ public class DocentAanwezigheidsController {
                 ListView.getItems().remove(index + 1);
                 ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
                 ListView.getItems().remove("");
-                ListView.getItems().add("Afwezigheid percentage: " + percentageMin());
+                ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
+                afwezigPercent = afwezigPercent-20;
+                ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
                 ListView.getItems().add("");
             }
         }
@@ -109,7 +114,9 @@ public class DocentAanwezigheidsController {
                 ListView.getItems().add(index + 1, "afwezig door docent");
                 ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
                 ListView.getItems().remove("");
-                ListView.getItems().add("Afwezigheid percentage: " + percentageMin());
+                ListView.getItems().remove("Percentage afwezig:  " + afwezigPercent);
+                afwezigPercent = afwezigPercent+20;
+                ListView.getItems().add("Percentage afwezig:  " + afwezigPercent);
                 ListView.getItems().add("");
             }
         }
