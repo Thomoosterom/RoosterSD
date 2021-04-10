@@ -77,7 +77,6 @@ public class DocentAanwezigheidsController {
             }
         }
         Leerlingen.add("Percentage afwezig: " + afwezigPercentage());
-        Leerlingen.add("");
 
         ListView.setItems(Leerlingen);
 
