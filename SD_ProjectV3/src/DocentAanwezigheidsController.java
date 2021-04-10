@@ -90,10 +90,7 @@ public class DocentAanwezigheidsController {
             int index = Integer.parseInt(i) + 1;
             Object aanwezig = "aanwezig";
             if (ListView.getItems().get(index).equals("afwezig")) {
-                if (Student.getDeStudent()==null || datePicker.getValue().isAfter(Student.getDeStudent().getAfwezigDatumBegin().minusDays(1)) &&
-                        datePicker.getValue().isBefore(Student.getDeStudent().getAfwezigDatumEinde().plusDays(1)) ||
-                        datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
-                                datePicker.getValue().isBefore(Student.getDeStudent().getBeterDatum())) {
+
                     ListView.getItems().set(index, aanwezig);
                     ListView.getItems().remove(index + 1);
                     ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
@@ -103,7 +100,7 @@ public class DocentAanwezigheidsController {
                 }
             }
         }
-    }
+
 
     public void setAfwezig(ActionEvent actionEvent) {
         ObservableList leerling = ListView.getSelectionModel().getSelectedIndices();
