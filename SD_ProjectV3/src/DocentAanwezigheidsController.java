@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import jdk.dynalink.beans.StaticClass;
 
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
@@ -72,6 +73,9 @@ public class DocentAanwezigheidsController {
 
             }
         }
+        Leerlingen.add("Percentage afwezig: " + afwezigPercentage());
+        Leerlingen.add("");
+
         ListView.setItems(Leerlingen);
 
     }
@@ -86,6 +90,10 @@ public class DocentAanwezigheidsController {
             if (ListView.getItems().get(index).equals("afwezig")) {
                 ListView.getItems().set(index, aanwezig);
                 ListView.getItems().remove(index + 1);
+                ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
+                ListView.getItems().remove("");
+                ListView.getItems().add("Afwezigheid percentage: " + percentageMin());
+                ListView.getItems().add("");
             }
         }
     }
@@ -99,9 +107,12 @@ public class DocentAanwezigheidsController {
             if (ListView.getItems().get(index).equals("aanwezig")) {
                 ListView.getItems().set(index, afwezig);
                 ListView.getItems().add(index + 1, "afwezig door docent");
+                ListView.getItems().remove("Percentage afwezig: " + afwezigPercentage());
+                ListView.getItems().remove("");
+                ListView.getItems().add("Afwezigheid percentage: " + percentageMin());
+                ListView.getItems().add("");
             }
         }
-
     }
 
     public void dagTerug(ActionEvent actionEvent) {
@@ -136,5 +147,29 @@ public class DocentAanwezigheidsController {
             ListView.getItems().clear();
             ListView.getItems().add("Er is geen les vandaag");
         }
+    }
+
+    public double afwezigPercentage() {
+        double aantalAfwezig = 0;
+        if (Student.getDeStudent() != null && Student.getDeStudent().getStatus().equals("afwezig")) {
+            if (datePicker.getValue().isAfter(Student.getDeStudent().getAfwezigDatumBegin().minusDays(1)) &&
+                    datePicker.getValue().isBefore(Student.getDeStudent().getAfwezigDatumEinde().plusDays(1)) ||
+                    datePicker.getValue().isAfter(Student.getDeStudent().getZiekDatum().minusDays(1)) &&
+                            datePicker.getValue().isBefore(Student.getDeStudent().getBeterDatum())) {
+                aantalAfwezig++;
+            }
+        }
+        double percentage = (aantalAfwezig/5) * 100;
+        return percentage;
+    }
+
+    public double percentagePlus() {
+        double percentagePlus = afwezigPercentage();
+        return percentagePlus =-20;
+    }
+
+    public double percentageMin() {
+        double percentagePlus = afwezigPercentage();
+        return percentagePlus =+20;
     }
 }

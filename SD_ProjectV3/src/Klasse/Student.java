@@ -7,7 +7,15 @@ public class Student {
     private static Student deStudent;
     public static void setDeStudent(Student student){ deStudent = student;}
     public static Student getDeStudent(){ return deStudent;}
-    
+
+    public static int aantalAfwezig;
+    public static void setAantalAfwezig(int a){ aantalAfwezig = a;}
+    public static int getAantalAfwezig() { return aantalAfwezig; }
+
+    public static double afwezigPercentage;
+    public static void setAfwezigPercentage(double afwezigPercentage) { Student.afwezigPercentage = afwezigPercentage; }
+    public static double getAfwezigPercentage() { return afwezigPercentage; }
+
     private String naam;
     private String email;
     private String status;
@@ -28,6 +36,10 @@ public class Student {
         naam = nm;
         email = em;
         status = st;
+    }
+
+    public void afwezigPlusEen(){
+        aantalAfwezig++;
     }
 
     public LocalDate getAfwezigDatumBegin(){ return afwezigDatumBegin;}
